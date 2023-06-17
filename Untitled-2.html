@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        #result {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Love Percentage Calculator</h1>
+    <form id="loveCalculatorForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br><br>
+        <label for="secondName">Second Name:</label>
+        <input type="text" id="secondName" required><br><br>
+        <input type="submit" value="Calculate">
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("loveCalculatorForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            var firstName = document.getElementById("firstName").value;
+            var secondName = document.getElementById("secondName").value;
+            
+            var lovePercentage = calculateLovePercentage(firstName, secondName);
+            
+            document.getElementById("result").innerText = "Love Percentage: " + lovePercentage + "%";
+        });
+
+        function calculateLovePercentage(firstName, secondName) {
+            var lovePercentage;
+            
+            // Check if names are "koussay" and "sara"
+            if (firstName.toLowerCase() === "koussay" && secondName.toLowerCase() === "sara") {
+                lovePercentage = 100;
+            } else {
+                // Generate a random love percentage between 1 and 100
+                lovePercentage = Math.floor(Math.random() * 100) + 1;
+            }
+            
+            return lovePercentage;
+        }
+    </script>
+</body>
+</html>
